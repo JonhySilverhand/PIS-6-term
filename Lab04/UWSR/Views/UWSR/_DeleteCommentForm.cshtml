@@ -1,0 +1,13 @@
+﻿@model WSREFCOMMENT
+
+<div>
+    <p>Are you sure?</p>
+
+    @using (Html.BeginForm("DeleteComment", "UWSR", FormMethod.Post))
+    {
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <button class="btn btn-primary" type="submit" name="confirmation">Yes</button>
+        <button  class="btn btn-primary" type="button" onclick="cancelDeleteComment('@Model.Id')">Cansel</button>
+    }
+</div>

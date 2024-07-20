@@ -1,0 +1,30 @@
+﻿@using (Html.BeginForm("AddLink", "UWSR", FormMethod.Post))
+{
+    <label for="url">URL:</label>
+    <input  class="form-control"  type="text" id="url" name="Url" required />
+    <label for="description">Description:</label>
+    <input  class="form-control"  type="text" id="description" name="Description" required />
+
+    <button class="btn btn-primary" type="submit">Add Link</button>
+}
+
+@using (Html.BeginForm("UpdateLink", "UWSR", FormMethod.Post))
+{
+    <label for="updateUrl">URL to Update:</label>
+    <input  class="form-control"  type="text" id="updateUrl" name="Url" required />
+    <label for="updateDescription">New Description:</label>
+    <input  class="form-control"  type="text" id="updateDescription" name="Description" required />
+
+    <button class="btn btn-primary" type="submit">Update Link</button>
+}
+
+@using (Html.BeginForm("AddComment", "UWSR", FormMethod.Post))
+{
+    <label for="commentText">Comment:</label>
+    <input  class="form-control"  type="text" id="commentText" name="ComText" required />
+    <!-- Другие поля для добавления комментария -->
+
+    <button class="btn btn-primary" type="submit">Add Comment</button>
+}
+
+<!-- Дополнительный HTML и код для режима владельца, если нужно -->

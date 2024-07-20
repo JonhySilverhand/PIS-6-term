@@ -1,0 +1,17 @@
+﻿@model WSREF
+
+@using (Html.BeginForm("DeleteLink", "UWSR", FormMethod.Post))
+{
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <p>are you sure?</p>
+
+    <button class="btn btn-primary" type="submit" name="confirmation">ok</button>
+    <button class="btn btn-primary" type="button" onclick="cancelDeleteLink('@Model.Id')">cancel</button>
+}
+
+<script>
+    function cancelDeleteLink(linkId) {
+        document.getElementById('deleteLinkForm_' + linkId).style.display = 'none';
+    }
+</script>

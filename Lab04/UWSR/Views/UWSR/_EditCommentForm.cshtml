@@ -1,0 +1,24 @@
+﻿@model WSREFCOMMENT
+
+<div>
+    @using (Html.BeginForm("UpdateComment", "UWSR", FormMethod.Post))
+    {
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <textarea class="form-control"  name="ComText">@Model.ComText</textarea>
+        <button class="btn btn-primary" type="submit">save</button>
+        <button  class="btn btn-primary" type="button" onclick="cancelEditComment('@Model.Id')">cancel</button>
+    }
+</div>
+
+<script>
+    document.querySelectorAll('.editCommentButton').forEach(button => {
+        button.addEventListener('click', function () {
+            const commentId = this.getAttribute('data-comment-id');
+            document.getElementById('editCommentForm_' + commentId).style.display = 'block';
+        });
+    });
+
+    function cancelEditComment(commentId) {
+        document.getElementById('editCommentForm_' + commentId).style.display = 'none';
+    }
+</script>

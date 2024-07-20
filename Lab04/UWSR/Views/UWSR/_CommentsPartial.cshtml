@@ -1,0 +1,54 @@
+﻿@model List<WSREFCOMMENT>
+
+@{
+    string cuserrole = ViewBag.UserRole;
+    string cSessionId = ViewBag.СurrentSessionId;
+}
+
+
+
+<h2>Comments</h2>
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var comment in Model)
+
+        {
+            <li>
+                @comment.ComText
+                 @comment.Stamp
+                @if (cuserrole == "owner" || comment.SessionId == cSessionId)
+                {
+                    <button class="editCommentButton" data-comment-id="@comment.Id">change comment info</button>
+                    <div id="editCommentForm_@comment.Id" style="display:none;">
+                        @await Html.PartialAsync("_EditCommentForm", comment)
+                    </div>
+                }
+
+                @if (cuserrole == "owner" || @comment.SessionId == cSessionId)
+                {
+                    <button class="deleteCommentButton" data-comment-id="@comment.Id">del</button>
+                    <div id="deleteCommentForm_@comment.Id" style="display:none;">
+                        @await Html.PartialAsync("_DeleteCommentForm", comment)
+                    </div>
+                    <br /> <br />
+                }
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>no comments.</p>
+}
+
+
+    <script>
+        document.querySelectorAll('.deleteCommentButton').forEach(button => {
+            button.addEventListener('click', function () {
+                const commentId = this.getAttribute('data-comment-id');
+                document.getElementById('deleteCommentForm_' + commentId).style.display = 'block';
+            });
+        });
+    </script>
