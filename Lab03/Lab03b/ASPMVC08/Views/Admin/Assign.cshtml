@@ -1,0 +1,69 @@
+﻿@model RoleModel
+
+<div>
+    <h1 class="text-center">Назначить роль</h1>
+    <div class="mx-auto">
+        @foreach (var user in Model.Users)
+        {
+            <div>
+                <div>
+                    Пользователь: @user.UserName
+                </div>
+
+                @foreach (var role in Model.Roles)
+                {
+                    <div>
+                        @if (user.Roles.Contains(role.Name))
+                        {
+                            <input type="checkbox" class="role-@role.Id" checked onclick="addRole('@user.Id', '@role.Id')" />
+                        }
+                        else
+                        {
+                            <input type="checkbox" class="role-@role.Id" onclick="addRole('@user.Id', '@role.Id')" />
+                        }
+                        <label>@role.Name</label>
+                    </div>
+                }
+            </div>
+            <hr />
+        }
+    </div>
+</div>
+<div class="d-flex flex-column gap-2 mt-4 w-25">
+    <span class="text-black-50 bg-danger rounded-2 visually-hidden bg-opacity-10 p-2" id="error"></span>
+</div>
+<div class="d-flex flex-column gap-2 mt-4 w-25">
+    <span class="text-black-50 bg-success rounded-2 visually-hidden bg-opacity-10 p-2" id="success"></span>
+</div>
+
+<script>
+    async function addRole(userId, roleId) {
+        try {
+            const formData = new FormData();
+
+            formData.append("userId", userId);
+            formData.append("roleId", roleId);
+
+            const response = await fetch(`/Admin/Assign`, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) 
+            {
+                const success = document.getElementById("success");
+                success.innerHTML = "Успешно!";
+                success.classList.remove('visually-hidden');
+                setTimeout(() => {
+                    success.classList.add('visually-hidden');
+                }, 1000);
+            }
+
+            return;
+        } catch (e) {
+            const err = document.getElementById("error");
+            err.innerHTML = e;
+            err.classList.remove('visually-hidden');
+        }
+    }
+</script>

@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ASPCMVC08</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ASPCMVC08.styles.css" asp-append-version="true" />
+</head>
+<body class="min-vw-100 d-flex flex-column gap-5">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="d-flex gap-3 mt-4">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <a class="text-decoration-none" asp-controller="Admin" asp-action="Index">Панель администратора</a>
+                        }
+
+                        @if (User.IsInRole("Employee") || User.IsInRole("Master"))
+                        {
+                            <a asp-controller="Calc" asp-action="Index">Калькулятор</a>
+                        }
+
+                        <a class="text-decoration-none" asp-controller="Admin" asp-action="ChangePassword">Сменить пароль</a>
+                        <a class="text-decoration-none" asp-controller="Admin" asp-action="SignOut">Выйти</a>
+                    }
+                    else
+                    {
+                        <a class="text-decoration-none" asp-controller="Admin" asp-action="SignIn">Войти</a>
+                        <a class="text-decoration-none" asp-controller="Admin" asp-action="Register">Зарегистрироваться</a>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

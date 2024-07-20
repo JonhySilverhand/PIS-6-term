@@ -1,0 +1,90 @@
+@model List<UserRolesViewModel>
+
+@{
+    ViewData["Title"] = "Панель Администратора";
+}
+<div>
+    @if (User.IsInRole("Administrator"))
+    {
+
+        <div>
+
+            @if (ViewBag.IsAuthorized == true)
+            {
+                <p class="mt-4">
+                    Your Name: @ViewBag.selfUsername
+                </p>
+                <p>
+                    Your Role: <span>
+                        @foreach (var role in ViewBag.selfRoles)
+                        {
+                            <span>@role</span>
+                        }
+                    </span>
+                </p>
+            }
+            else
+            {
+                <div>Войдите или зарегистрируйтесь</div>
+            }
+        </div>
+
+        <div class="mx-auto d-flex justify-content-around">
+            <a class="text-decoration-none" href="/Admin/CreateUser">Добавить пользователя</a>
+            <a class="text-decoration-none" href="/Admin/DeleteUser">Удалить пользователя</a>
+            <a class="text-decoration-none" href="/Admin/CreateRole">Создать роль</a>
+            <a class="text-decoration-none" href="/Admin/DeleteRole">Удалить роль</a>
+            <a class="text-decoration-none" href="/Admin/Assign">Назначить роль</a>
+        </div>
+
+
+        <h1 class="text-center mt-4">Пользователи</h1>
+        @if (Model != null)
+        {
+            <table class="user-roles-table w-50 mx-auto">
+                <thead>
+                    <tr>
+                        <th>Имя пользователя</th>
+                        <th>Роли</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td>
+                                @foreach (var role in user.Roles)
+                                {
+                                    <span>@role</span>
+                                    <br />
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div>Пользователи отсутствуют</div>
+        }
+    }
+    else
+    {
+        <div>403. Войдите или зарегистрируйтесь</div>
+    }
+</div>
+
+<style>
+    .user-roles-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        .user-roles-table th, .user-roles-table td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+</style>

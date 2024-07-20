@@ -1,0 +1,16 @@
+﻿<div>
+    <h1 class="text-center">Добавить пользователя</h1>
+    <form method="post" action="/Admin/CreateUser" class="mx-auto w-25">
+        <div class="form-group">
+            <label>Имя:</label>
+            <input class="form-control" name="username" value="@ViewBag.Username" />
+        </div>
+        <div class="form-group mt-1">
+            <label>Пароль:</label>
+            <input class="form-control" type="password" name="password" value="@ViewBag.Password" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Создать</button>
+
+        @await Html.PartialAsync("ErrorsBlock")
+    </form>
+</div>

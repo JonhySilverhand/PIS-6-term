@@ -1,0 +1,12 @@
+﻿<div>
+    <h1 class="text-center">Создать роль</h1>
+    <form method="post" action="/Admin/CreateRole" class="mx-auto w-25">
+        <div class="form-group">
+            <label>Имя роли:</label>
+            <input class="form-control" name="name" value="@ViewBag.Name" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Создать</button>
+
+        @await Html.PartialAsync("ErrorsBlock")
+    </form>
+</div>

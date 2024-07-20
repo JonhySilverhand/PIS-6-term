@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+
+    @if (ViewBag.IsAuthorized == true)
+    {
+        <p>
+            Имя: @ViewBag.Username
+        </p>
+        <p>
+            Роли: <span>
+                @foreach (var role in ViewBag.Roles)
+                {
+                    <span>@role</span>
+                }
+            </span>
+        </p>
+
+        @if (!User.IsInRole("Administrator"))
+        {
+            <form action="/Admin/DeleteUser?act=Index&cntrl=Home" method="post">
+                <button type="submit" class="btn btn-primary">Удалить свой аккаунт</button>
+                <input style="visibility: hidden; position: absolute" name="username" value="@User.Identity.Name" />
+            </form>
+        }
+    }
+    else
+    {
+        <h3 class="text-center">Главная страница</h3>
+    }
+</div>

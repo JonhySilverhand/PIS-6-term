@@ -1,0 +1,19 @@
+﻿@model IEnumerable<string>
+
+<div>
+    <h1 class="text-center">Удалить пользователя</h1>
+    <form method="post" action="/Admin/DeleteUser" class="mx-auto w-25">
+        <label>Выберите пользователя</label>
+     <br/>
+        <select class="form-select" name="username">
+            @foreach (var name in Model)
+            {
+                <option>@name</option>
+            }
+        </select>
+        <br />
+        <button type="submit" class="btn btn-primary mt-4">Удалить</button>
+
+        @await Html.PartialAsync("ErrorsBlock")
+    </form>
+</div>

@@ -1,0 +1,7 @@
+﻿<div>
+    <h1 class="text-center">Выйти из аккаунта?</h1>
+    <form method="post" action="/Admin/SignOut" class="mx-auto d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary mt-4">Выйти</button>
+        @await Html.PartialAsync("ErrorsBlock")
+    </form>
+</div>
