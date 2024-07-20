@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WebSocket</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="client.js" type="text/javascript"></script>
+</head>
+<body>
+    <section style="width: 800px; float: left">
+        <div id="wsproperties">
+            WebSocket status :
+            <span id="support"></span><br />
+        </div>
+    </section>
+    <br />
+    <section style="width: 215px; border: 1px solid gray">
+        <div style="margin: 10px 5px">
+            <input id="bstart" type="button" value="Старт"
+                   onclick="exe_start()" style="width: 100px" />
+            <input id="bstop" type="button" value="Стоп"
+                   onclick="exe_stop()"
+                   style="width: 100px" />
+            <br />
+            <label for="ta"></label>
+            <textarea id="ta" rows="20" cols="25"
+                      style="text-align: center; margin-top: 10px" readonly>
+            </textarea>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>POST</title>
+</head>
+<body>
+    <h1>Task5</h1>
+    <form id="form">
+        <label for="x">X:</label>
+        <input type="text" id="x" name="x"><br><br>
+        <label for="y">Y:</label>
+        <input type="text" id="y" name="y"><br><br>
+        <button type="submit" id="calbutton">Submit</button>
+    </form>
+
+    <div id="result"></div>
+    <script>
+        document.getElementById('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', `/Task5?x=${formData.get('x')}&y=${formData.get('y')}`, true);
+
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById('result').innerHTML = 'Result: ' + xhr.responseText;
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
