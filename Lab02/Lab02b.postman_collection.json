@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "7c429aad-4ab0-4471-a978-f173b66bacb5",
+		"name": "Lab02b",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28197128"
+	},
+	"item": [
+		{
+			"name": "1",
+			"item": [
+				{
+					"name": "/MResearch/M01/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/MResearch/M02/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"MResearch",
+								"M02",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/MResearch/M01",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/MResearch/M01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"MResearch",
+								"M01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/MResearch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/MResearch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"MResearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V2/MResearch/M01",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V2/MResearch/M01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V2",
+								"MResearch",
+								"M01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V3/MResearch/string/M01",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V3/MResearch/string/M01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V3",
+								"MResearch",
+								"string",
+								"M01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/V2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V2/MResearch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V2/MResearch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V2",
+								"MResearch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V2/MResearch/M02",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V2/MResearch/M02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V2",
+								"MResearch",
+								"M02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/MResearch/M02",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/MResearch/M02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"MResearch",
+								"M02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V3/MResearch/string/M02",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V3/MResearch/string/M02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V3",
+								"MResearch",
+								"string",
+								"M02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/V3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V3/MResearch/string/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V3/MResearch/string/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V3",
+								"MResearch",
+								"string",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V3/MResearch/string/M03",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5136/V3/MResearch/string/M03",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5136",
+							"path": [
+								"V3",
+								"MResearch",
+								"string",
+								"M03"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2",
+			"item": [
+				{
+					"name": "GET:M04",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5130/it/4/text",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5130",
+							"path": [
+								"it",
+								"4",
+								"text"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET:M05",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5130/it/false/text",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5130",
+							"path": [
+								"it",
+								"false",
+								"text"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST:M05",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5130/it/true/text",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5130",
+							"path": [
+								"it",
+								"true",
+								"text"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET:M06",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5130/it/4.66/text",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5130",
+							"path": [
+								"it",
+								"4.66",
+								"text"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE:M06",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5130/it/-5.67/text",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5130",
+							"path": [
+								"it",
+								"-5.67",
+								"text"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT:M07",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5130/it/qwi/181",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5130",
+							"path": [
+								"it",
+								"qwi",
+								"181"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST:M08",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5130/it/sam_ple@email.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5130",
+							"path": [
+								"it",
+								"sam_ple@email.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

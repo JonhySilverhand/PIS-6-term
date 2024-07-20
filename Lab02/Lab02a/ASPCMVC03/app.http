@@ -1,0 +1,22 @@
+###
+@hostname=localhost
+@port=5126
+GET http://{{hostname}}:{{port}}/Start/Index
+###
+GET http://{{hostname}}:{{port}}/Start/One
+###
+GET http://{{hostname}}:{{port}}/Start/Two
+###
+GET http://{{hostname}}:{{port}}/Start/Three
+###
+POST http://{{hostname}}:{{port}}/Start/Index
+###
+POST http://{{hostname}}:{{port}}/Start/One
+###
+POST http://{{hostname}}:{{port}}/Start/Two
+###
+POST http://{{hostname}}:{{port}}/Start/Three
+###
+GET https://belstu.by/fakultety/voennaya-kafedra
+###
+GET http://{{hostname}}:{{port}}/Auto/kss
